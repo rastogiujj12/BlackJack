@@ -81,7 +81,7 @@ function shuffleDeck (deck) {
 }
 
 function getCardString(card){
-	console.log(card.value, card.suit);
+	//console.log(card.value, card.suit);
 	return card.value + " of " + card.suit;
 }
 
