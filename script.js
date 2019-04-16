@@ -9,15 +9,23 @@ let values = ['Ace', 'King', 'Queen' , 'Jack',
 	'Five', 'Four', 'Three', 'Two'];
 
 
-
 function createDeck(){
 	let deck = []
 	for(i=0;i<suits.length;i++){
 		for(j=0;j<values.length;j++){
-			deck.push(values[j] + " of " + suits[i]);
+			let card ={
+				suit: suits[i],
+				value: values[j]
+			};
+			deck.push(card);
 		}
 	}
 	return deck;
+}
+
+function getCardString(card)
+{
+	return card.value + " of " + card.suit;
 }
 
 function getNextCard(){
@@ -26,16 +34,10 @@ function getNextCard(){
 
 let deck = createDeck();
 
-
-
-console.log(deck);
-
-
-
 let playerCards = [ getNextCard(),getNextCard() ];
 
 console.log("Welcome to blackjack");
 
 console.log("you are dealt: ");
-console.log(" " + playerCards[0]);
-console.log(" " + playerCards[1]);
+console.log(" " + getCardString(playerCards[0]) );
+console.log(" " + getCardString(playerCards[1]) );
